@@ -24,7 +24,7 @@ export default defineComponent({
   z-index: 1;
   left: 288px;
   height: 100vh;
-  width: 1272px;
+  width: 100vw;
   right: 0px;
   top: 0px;
   bottom: 0px;
@@ -35,7 +35,7 @@ export default defineComponent({
 
 .main .header-div {
   position: absolute;
-  width: 1272px;
+  width: 100vw;
   height: 64px;
   top: 0px;
   border-bottom: 1px solid #DFE2EB;

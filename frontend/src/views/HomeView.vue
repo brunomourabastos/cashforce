@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <MainPage msg="Testando Aplicação"/>
+    <MainPage msg="Visualize as notas fiscais que você tem."/>
   </div>
 </template>
 
