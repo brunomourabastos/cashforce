@@ -10,7 +10,7 @@
     "http-status-codes": "^2.2.0"
 
   },
-  "name": "backend",
+  "name": "cashforce-api",
   "version": "1.0.0",
   "description": "Teste técnico Cashforce",
   "main": "./src/api/server.js",

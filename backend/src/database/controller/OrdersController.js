@@ -6,7 +6,7 @@ class OrdersController {
     this.ordersService = new OrdersService();
   }
 
-  async getOrders(req, res) {
+  async getOrders(_req, res) {
     try {
       const orders = await this.ordersService.getOrders();
       res.status(StatusCodes.OK).json(orders);
