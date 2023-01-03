@@ -10,7 +10,7 @@
         <p>Visualize as notas fiscais que você tem.</p>
       </div>
     </div>
-    <div>
+    <div class="table-orders">
       <table id="orders">
         <tr>
           <th>NOTA FISCAL</th>
@@ -26,7 +26,7 @@
           <td>{{ order.provider.name }}</td>
           <td>{{ formatDate(order.emissionDate) }}</td>
           <td> R$ {{ formatValue(order.value)  }}</td>
-          <td>{{ order.orderStatusBuyer }}</td>
+          <td>{{ showStatus(order.orderStatusBuyer) }}</td>
           <td> <buttom> Dados do cedente </buttom></td>
         </tr>
       </table>
@@ -37,6 +37,7 @@
 <script lang="js">
 import { defineComponent } from 'vue'
 import getAllOrders from '../api/requests/getAllOrders'
+import { showStatus } from '../helper/showStatus'
 import { format } from 'date-fns'
 
 export default defineComponent({
@@ -56,7 +57,8 @@ export default defineComponent({
     },
     formatDate (value) {
       return format(new Date(value), 'dd/MM/yyyy')
-    }
+    },
+    showStatus: showStatus
   },
   async mounted () {
     await this.getAllOrders()
@@ -109,7 +111,6 @@ export default defineComponent({
   font-family: 'Dm Sans';
   font-style: normal;
 }
-
 .page-description {
   font-family: 'Dm Sans';
   font-style: normal;
@@ -126,7 +127,6 @@ export default defineComponent({
   top: 0px;
   border-bottom: 1px solid #DFE2EB;
 }
-
 .main img {
   margin-top: 100px;
 }
