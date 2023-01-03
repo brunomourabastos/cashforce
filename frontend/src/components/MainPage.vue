@@ -24,9 +24,9 @@
           <td>{{ order.nNf }}</td>
           <td>{{ order.buyer.name }}</td>
           <td>{{ order.provider.name }}</td>
-          <td>{{ order.emissionDate }}</td>
-          <td> R$ {{ order.value }}</td>
-          <td>{{ order.date }}</td>
+          <td>{{ formatDate(order.emissionDate) }}</td>
+          <td> R$ {{ formatValue(order.value)  }}</td>
+          <td>{{ order.orderStatusBuyer }}</td>
           <td> <buttom> Dados do cedente </buttom></td>
         </tr>
       </table>
@@ -37,6 +37,7 @@
 <script lang="js">
 import { defineComponent } from 'vue'
 import getAllOrders from '../api/requests/getAllOrders'
+import { format } from 'date-fns'
 
 export default defineComponent({
   name: 'MainPage',
@@ -46,9 +47,15 @@ export default defineComponent({
     }
   },
   methods: {
+    formatValue (value) {
+      return (+value).toFixed(2).replace('.', ',')
+    },
     async getAllOrders () {
       const response = await getAllOrders()
       this.orders = response.data
+    },
+    formatDate (value) {
+      return format(new Date(value), 'dd/MM/yyyy')
     }
   },
   async mounted () {
