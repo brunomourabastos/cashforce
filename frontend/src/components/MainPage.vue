@@ -11,11 +11,25 @@
       </div>
     </div>
     <div>
-      <ul>
-        <li v-for="order in orders" :key="order.id">
-          Sou uma nf: {{ order.nNf }}
-        </li>
-      </ul>
+      <table id="orders">
+        <tr>
+          <th>NOTA FISCAL</th>
+          <th>SACADO</th>
+          <th>CEDENTE</th>
+          <th>EMISSÃO</th>
+          <th>VALOR</th>
+          <th>STATUS</th>
+        </tr>
+        <tr v-for="order in orders" :key="order.id">
+          <td>{{ order.nNf }}</td>
+          <td>{{ order.buyer.name }}</td>
+          <td>{{ order.provider.name }}</td>
+          <td>{{ order.emissionDate }}</td>
+          <td> R$ {{ order.value }}</td>
+          <td>{{ order.date }}</td>
+          <td> <buttom> Dados do cedente </buttom></td>
+        </tr>
+      </table>
     </div>
   </div>
 </template>
