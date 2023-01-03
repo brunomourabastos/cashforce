@@ -1,18 +1,44 @@
 <template>
   <div class="main">
     <div class="header-div"></div>
-    <img alt="Shaking hands logo" src="../assets/incolorhands.svg"> Notas Fiscais
-    <p>{{ msg }}</p>
+    <div class="page-title">
+      <div class="title-child">
+        <img alt="Shaking hands logo" src="../assets/incolorhands.svg">
+        <b class="nf-texto">Notas fiscais</b>
+      </div>
+      <div class="page-description">
+        <p>Visualize as notas fiscais que você tem.</p>
+      </div>
+    </div>
+    <div>
+      <ul>
+        <li v-for="order in orders" :key="order.id">
+          Sou uma nf: {{ order.nNf }}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import { defineComponent } from 'vue'
+import getAllOrders from '../api/requests/getAllOrders'
 
 export default defineComponent({
   name: 'MainPage',
-  props: {
-    msg: String
+  data () {
+    return {
+      orders: []
+    }
+  },
+  methods: {
+    async getAllOrders () {
+      const response = await getAllOrders()
+      this.orders = response.data
+    }
+  },
+  async mounted () {
+    await this.getAllOrders()
   }
 })
 </script>
@@ -33,6 +59,45 @@ export default defineComponent({
   border-radius: 15px 0px 0px 15px;
 }
 
+.page-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 5px;
+  margin-left: 48px;
+}
+
+.title-child .img {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 20.83%;
+  bottom: 20.57%;
+  border: 1px solid #021B51;
+}
+
+.nf-texto {
+  margin-left: 9px;
+  line-height: 28px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #021B51;
+  font-family: 'Dm Sans';
+  font-style: normal;
+}
+
+.page-description {
+  font-family: 'Dm Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #727D94;
+  margin-top: -14px;
+}
 .main .header-div {
   position: absolute;
   width: 100vw;
