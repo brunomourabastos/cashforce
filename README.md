@@ -51,21 +51,41 @@ Será necessário também que as portas 3001 (API) e 8080 (Front End) estejam di
  <summary>
  <strong>💻Como executar a aplicação:</strong>
  </summary><br>
+
  1. Clone o repositório
 
-  - Use o comando: `git clone https://github.com/tryber/sd-019-c-project-car-shop.git`.
-  - Entre na pasta do repositório que você acabou de clonar:
-    - `cd cashforce`
+  - Use o comando: `git clone git@github.com:brunomourabastos/cashforce.git`.
+    - Entre na pasta do repositório que você acabou de clonar, use o comando `cd cashforce`.
  
- 2 - Entre na pasta cashforce, utilizando cd cashforce e utilize o comando npm run install:all
+ 2. Instale as dependências
+
+  - Dentro da pasta cashforce, use o comando: `npm run install:all`.
+    - Aguarde a instalação das dependências. Nessa etapa serão instaladas as dependências do backend e frontend.
+
+ 3. Inicialistar docker e docker-compose:
  
- 3 - Agora, utilize o comando npm run start:docker (você precisa estar com o docker aberto e funcionando)
+  - Dentro da pasta cashforce, use o comando: `npm run start:docker`.
+    - Nessa etapa, é necessário o docker aberto e funcionando.
+
+ 4. Criar e popular o banco de dados:
  
- 4 - Para criar e popular o banco de dados, vamos utilizar o comando npm run start:db
+  - Dentro da pasta cashforce, use o comando: `npm run start:db`.
+    - Aguarde até que a operação seja finalizada.
  
- 5 - Agora, vamos subir a API npm run start:api
+ 5. Iniciar API:
  
- 6 - Por último, vamos subir o front. Para isso, abra um novo terminal, acesse a pasta cashforce (mesma dos passos anteriores) e utilize o código npm run start:app.
+  - Dentro da pasta cashforce, use o comando: `npm run start:api`.
+    - Aguarde que a mensagem `API rodando na porta 3001` apareça
+ 
+ 6. Iniciar Front End:
+ 
+  - Abra um novo terminal.
+    - Acesse a pasta `cashforce` (mesma dos passos anteriores).
+      - Use o comando `npm run start:app`.
+      
+  <details>
+  <summary><strong>Deve aparecer uma mensagem assim:</strong></summary>
+  </details>
  
  Com isso, teremos a API, rodando em localhost:3001 e a exibição no front end em localhost:8080.
  
