@@ -3,20 +3,39 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    /**
-     * Add altering commands here.
-     *
-     * Example:
-     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
-     */
+    await queryInterface.createTable('orderportions', {
+      id: {
+        autoIncrement: true,
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        primaryKey: true
+      },
+      nDup: {
+        type: Sequelize.STRING(255),
+        allowNull: false
+      },
+      dVenc: {
+        type: Sequelize.STRING(255),
+        allowNull: false
+      },
+      vDup: {
+        type: Sequelize.STRING(255),
+        allowNull: false
+      },
+      availableToMarket: {
+        type: Sequelize.BOOLEAN,
+        allowNull: true,
+        defaultValue: 1
+      },
+      orderId: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+      }
+    });
+    
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+    await queryInterface.dropTable('orderportions');
   }
 };
