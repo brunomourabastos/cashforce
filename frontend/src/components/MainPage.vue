@@ -23,14 +23,14 @@
             </tr>
           </thead>
         <tbody>
-          <tr v-for="order in orders" :key="order.id">
+          <tr class="table-values" v-for="order in orders" :key="order.id">
             <td>{{ order.nNf }}</td>
             <td>{{ order.buyer.name }}</td>
             <td>{{ order.provider.name }}</td>
             <td>{{ formatDate(order.emissionDate) }}</td>
-            <td> R$ {{ formatValue(order.value)  }}</td>
-            <td>{{ showStatus(order.orderStatusBuyer) }}</td>
-            <td> <buttom> Dados do cedente </buttom></td>
+            <td class="order-value"> {{ formatValue(order.value)  }}</td>
+            <td class="order-status">{{ showStatus(order.orderStatusBuyer) }}</td>
+            <td> <button> Dados do cedente </button></td>
           </tr>
         </tbody>
       </table>
@@ -42,7 +42,7 @@
 import { defineComponent } from 'vue'
 import getAllOrders from '../api/requests/getAllOrders'
 import { showStatus } from '../helper/showStatus'
-import { format } from 'date-fns'
+import { formatDate, formatValue } from '../helper/formatData'
 
 export default defineComponent({
   name: 'MainPage',
@@ -52,16 +52,12 @@ export default defineComponent({
     }
   },
   methods: {
-    formatValue (value) {
-      return (+value).toFixed(2).replace('.', ',')
-    },
     async getAllOrders () {
       const response = await getAllOrders()
       this.orders = response.data
     },
-    formatDate (value) {
-      return format(new Date(value), 'dd/MM/yyyy')
-    },
+    formatValue: formatValue,
+    formatDate: formatDate,
     showStatus: showStatus
   },
   async mounted () {
@@ -161,6 +157,56 @@ export default defineComponent({
   height: 22px;
   order: 0;
   flex-grow: 0;
+}
+
+.table-values {
+  box-sizing: border-box;
+  outline: 1px solid #DFE2EB;
+  border-radius: 6px;
+  width: 1177px;
+  height: 48px;
+}
+
+.table-values td {
+  align-items: center;
+  padding-left: 30px;
+  box-sizing: border-box;
+  width: 1177px;
+  height: 48px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: 'DM Sans';
+  font-style: normal;
+
+}
+
+.order-value {
+  color: #00AD8C;
+}
+
+.order-status {
+  width: 59px;
+  height: 16px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: #00AD8C;
+  text-transform: uppercase;
+}
+
+table {
+  border-spacing: 0 16px;
+}
+
+td button {
+  padding: 8px 29px;
+  border-radius: 24px;
+  border: 1px solid #CAD3FF;
+  font-size: 12px;
+  line-height: 16px;
+  color: #727D94;
+  background-color: #FFFFFF;
 }
 
 </style>
