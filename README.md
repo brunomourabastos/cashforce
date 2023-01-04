@@ -12,7 +12,9 @@ O banco de dados dessa aplicação está dockerizado, portanto, para executá-la
 <a href="https://docs.docker.com/compose/install/">Docker-Compose</a><br>
 
 Será necessário também que as portas 3001 (API) e 8080 (Front End) estejam disponíveis para a aplicação.
- 
+<br>
+<hr> 
+<br>
 <details>
   <summary>
   <strong>🛠 Ferramentas:</strong>
@@ -46,10 +48,11 @@ Será necessário também que as portas 3001 (API) e 8080 (Front End) estejam di
  <a href="https://mochajs.org/">Mocha</a><br>
  
  </details>
- 
+
+
  <details>
  <summary>
- <strong>💻Como executar a aplicação:</strong>
+ <strong>💻 Como executar a aplicação:</strong>
  </summary><br>
 
  1. Clone o repositório
@@ -76,39 +79,62 @@ Será necessário também que as portas 3001 (API) e 8080 (Front End) estejam di
  
   - Dentro da pasta cashforce, use o comando: `npm run start:api`.
     - Aguarde que a mensagem `API rodando na porta 3001` apareça
+    <details>
+      <summary>Deve aparecer uma imagem conforme abaixo:</summary>
+      <img src='./images/msgBackEnd.png'>
+    </details>
  
  6. Iniciar Front End:
  
   - Abra um novo terminal.
     - Acesse a pasta `cashforce` (mesma dos passos anteriores).
       - Use o comando `npm run start:app`.
+      <details>
+        <summary>Deve aparecer uma imagem conforme abaixo:</summary>
+        <img src='./images/msgFrontEnd.png'>
+      </details>
       
-  <details>
-  <summary><strong>Deve aparecer uma mensagem assim:</strong></summary>
-  </details>
- 
- Com isso, teremos a API, rodando em localhost:3001 e a exibição no front end em localhost:8080.
+ <strong>Com isso, teremos a API, rodando em localhost:3001 e a exibição no front end em localhost:8080.</strong>
  
  </details>
- 
-Teste
 
+<details>
+<summary>
+<strong>🕵🏿 Como testar a API</strong>
+</summary><br>
+
+ 1. Com a API em funcionanmento:
+
+  - Na pasta `cashforce` (mesma dos passos anteriores), use o comando: `run test:api`.
+    <details>
+      <summary>Deve aparecer uma imagem conforme abaixo:</summary>
+      <img src='./images/imgTestOk.png'>
+    </details>
+ 
 Para testar a API:
  
  - Com a API em funcionamento, entre na pasta cashforce (mesma dos passos anteriores) e utilize o comando npm run test:api, a informação abaixo deve ser exibida:
+</details>
+<br>
+<hr>
  
- Rotas API:
+## Rotas API:
  
  - Para esse projeto, foi necessário utilizar somente uma rota, porém a aplicação está pronta para ser escalada, caso haja necessidade:
+
+ |  |   |
+ | :-------: | :-------- |
+ | `Método`   | GET |
+ | `Funcionalidade`    | Requisição de todas as orders cadastradas no banco de dados |
+ | `URL`   | http://localhost:3001/orders |
+ |  |   |
  
- 1 - Rota de Orders:
- 
- Método: get
- Funcionalidade: Requisição de todas as orders cadastradas no banco de dados
- url: http://localhost:3001/orders
- 
- Essa rota, inicialmente, retorna o seguinte JSON:
- 
+ <details>
+  <summary>
+    Essa rota, inicialmente, retorna o seguinte JSON:
+   </summary>
+
+ ```json
  [
     {
         "id": 1,
@@ -222,13 +248,24 @@ Para testar a API:
         }
     }
 ]
- 
-Front End:
+``` 
+</details>
 
-Para ter acesso ao front end da aplicação, acesse o endereço: http://localhost:8080/ 
+<hr>
 
-A página inicial mostrará já a aplicação em funcionamento, informando os dados, conforme protótipo.
+# Front End:
 
-A aplicação deve estar parecida com a imagem abaixo:
+Para ter acesso ao Front End da aplicação, siga as orientações e acesse o endereço: ` http://localhost:8080/ `
 
+<strong>A página inicial mostrará já a aplicação em funcionamento, informando os dados, conforme protótipo.<strong>
+  <details>
+    <summary>Protótipo</summary>
+    <img src='./images/imgPrototipo.png' />
+  </details>
+
+<strong>A aplicação final deve estar igual a imagem abaixo:</strong>
+  <details>
+    <summary>Aplicação final</summary>
+    <img src='./images/imgFrontEnd.png' />
+  </details>
  
