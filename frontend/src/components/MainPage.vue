@@ -68,6 +68,7 @@ export default defineComponent({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 .main {
   position: absolute;
   z-index: 1;
@@ -81,7 +82,6 @@ export default defineComponent({
   box-shadow: 0px 10px 30px rgba(225, 229, 236, 0.5);
   border-radius: 15px 0px 0px 15px;
 }
-
 .page-title {
   display: flex;
   flex-direction: column;
@@ -90,7 +90,6 @@ export default defineComponent({
   gap: 5px;
   margin-left: 48px;
 }
-
 .title-child .img {
   box-sizing: border-box;
   position: absolute;
@@ -141,7 +140,6 @@ export default defineComponent({
   left: 48px;
   top: 176px;
 }
-
 .table-titles th {
   font-family: 'Dm Sans';
   font-style: normal;
@@ -158,7 +156,6 @@ export default defineComponent({
   order: 0;
   flex-grow: 0;
 }
-
 .table-values {
   box-sizing: border-box;
   outline: 1px solid #DFE2EB;
@@ -166,7 +163,6 @@ export default defineComponent({
   width: 1177px;
   height: 48px;
 }
-
 .table-values td {
   align-items: center;
   padding-left: 30px;
@@ -180,11 +176,9 @@ export default defineComponent({
   font-style: normal;
 
 }
-
 .order-value {
   color: #00AD8C;
 }
-
 .order-status {
   width: 59px;
   height: 16px;
