@@ -56,8 +56,6 @@ Será necessário também que as portas 3001 (API) e 8080 (Front End) estejam di
   - Use o comando: `git clone https://github.com/tryber/sd-019-c-project-car-shop.git`.
   - Entre na pasta do repositório que você acabou de clonar:
     - `cd cashforce`
-    
- 1 - clonar o repositório em uma pasta de sua preferência
  
  2 - Entre na pasta cashforce, utilizando cd cashforce e utilize o comando npm run install:all
  
