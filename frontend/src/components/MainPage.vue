@@ -11,24 +11,28 @@
       </div>
     </div>
     <div class="table-orders">
-      <table id="orders">
-        <tr>
-          <th>NOTA FISCAL</th>
-          <th>SACADO</th>
-          <th>CEDENTE</th>
-          <th>EMISSÃO</th>
-          <th>VALOR</th>
-          <th>STATUS</th>
-        </tr>
-        <tr v-for="order in orders" :key="order.id">
-          <td>{{ order.nNf }}</td>
-          <td>{{ order.buyer.name }}</td>
-          <td>{{ order.provider.name }}</td>
-          <td>{{ formatDate(order.emissionDate) }}</td>
-          <td> R$ {{ formatValue(order.value)  }}</td>
-          <td>{{ showStatus(order.orderStatusBuyer) }}</td>
-          <td> <buttom> Dados do cedente </buttom></td>
-        </tr>
+      <table class="orders">
+          <thead>
+            <tr class="table-titles">
+              <th>NOTA FISCAL</th>
+              <th>SACADO</th>
+              <th>CEDENTE</th>
+              <th>EMISSÃO</th>
+              <th>VALOR</th>
+              <th>STATUS</th>
+            </tr>
+          </thead>
+        <tbody>
+          <tr v-for="order in orders" :key="order.id">
+            <td>{{ order.nNf }}</td>
+            <td>{{ order.buyer.name }}</td>
+            <td>{{ order.provider.name }}</td>
+            <td>{{ formatDate(order.emissionDate) }}</td>
+            <td> R$ {{ formatValue(order.value)  }}</td>
+            <td>{{ showStatus(order.orderStatusBuyer) }}</td>
+            <td> <buttom> Dados do cedente </buttom></td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
@@ -73,7 +77,7 @@ export default defineComponent({
   z-index: 1;
   left: 288px;
   height: 100vh;
-  width: 100vw;
+  width: 1272px;
   right: 0px;
   top: 0px;
   bottom: 0px;
@@ -122,7 +126,7 @@ export default defineComponent({
 }
 .main .header-div {
   position: absolute;
-  width: 100vw;
+  width: 1272px;
   height: 64px;
   top: 0px;
   border-bottom: 1px solid #DFE2EB;
@@ -130,4 +134,33 @@ export default defineComponent({
 .main img {
   margin-top: 100px;
 }
+.table-orders {
+  display: flex;
+  width: 1177px;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+  position: absolute;
+  left: 48px;
+  top: 176px;
+}
+
+.table-titles th {
+  font-family: 'Dm Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: #A1A8B8;
+  align-items: center;
+  text-transform: uppercase;
+  border-radius: 4px;
+  width: 1177px;
+  flex: none;
+  height: 22px;
+  order: 0;
+  flex-grow: 0;
+}
+
 </style>
