@@ -3,6 +3,11 @@
 ## Teste Técnico Cashforce
 
 Estruturar uma aplicação web fullstack, a partir do banco de dados disponibilizado onde o objetivo é consumir os dados de uma API criada e informar no front end, conforme protótipo abaixo:
+<details>
+    <summary>Protótipo</summary>
+    <img src='./images/imgPrototipo.png' />
+</details>
+<br>
  
  
 O banco de dados dessa aplicação está dockerizado, portanto, para executá-la é necessário ter as seguintes ferramentas instaladas: <br>
@@ -115,9 +120,6 @@ Será necessário também que as portas 3001 (API) e 8080 (Front End) estejam di
       <img src='./images/imgTestOk.png'>
     </details>
  
-Para testar a API:
- 
- - Com a API em funcionamento, entre na pasta cashforce (mesma dos passos anteriores) e utilize o comando npm run test:api, a informação abaixo deve ser exibida:
 </details>
 <br>
 <hr>
@@ -261,16 +263,11 @@ Para testar a API:
 
 Para ter acesso ao Front End da aplicação, siga as orientações e acesse o endereço: ` http://localhost:8080/ `
 
-<strong>A página inicial mostrará já a aplicação em funcionamento, informando os dados, conforme protótipo.<strong>
-  <details>
-    <summary>Protótipo</summary>
-    <img src='./images/imgPrototipo.png' />
-  </details>
-  <br>
+<strong>A página inicial mostrará já a aplicação em funcionamento, informando os dados, conforme protótipo.<strong><br>
 
-<strong>A aplicação final deve estar igual a imagem abaixo:</strong>
+  
   <details>
-    <summary>Aplicação final</summary>
+    <summary>A aplicação final deve estar igual a imagem abaixo:</summary>
     <img src='./images/imgFrontEnd.png' />
   </details>
  
