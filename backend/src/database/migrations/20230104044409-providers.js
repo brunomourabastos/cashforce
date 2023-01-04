@@ -78,7 +78,7 @@ module.exports = {
         type: Sequelize.STRING(255),
         allowNull: true,
       },
-      bacnkAgency: {
+      bankAgency: {
         type: Sequelize.STRING(255),
         allowNull: true,
       },
@@ -109,7 +109,17 @@ module.exports = {
       email: {
         type: Sequelize.STRING(255),
         allowNull: true,
-      }
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        allowNull: true,
+        defaultValue: Sequelize.fn('now')
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: true,
+        defaultValue: Sequelize.fn('now')
+      },
     });
   },
 

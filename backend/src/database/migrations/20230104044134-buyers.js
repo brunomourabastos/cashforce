@@ -83,7 +83,7 @@ module.exports = {
         allowNull: true
       },
       situationDate: {
-        type: Sequelize.STRiNG(255),
+        type: Sequelize.STRING(255),
         allowNull: true
       },
       cnpjId: {
@@ -97,7 +97,19 @@ module.exports = {
       email: {
         type: Sequelize.STRING(255),
         allowNull: true,
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        allowNull: true,
+        defaultValue: Sequelize.fn('now')
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: true,
+        defaultValue: Sequelize.fn('now')
       }
+      
+
     })
   },
 

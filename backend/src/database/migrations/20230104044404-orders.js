@@ -22,17 +22,14 @@ module.exports = {
       orderPath: {
         type: Sequelize.STRING(255),
         allowNull: true,
-        unique: true,
       },
       orderFileName: {
         type: Sequelize.STRING(255),
         allowNull: true,
-        unique: true,
       },
       orderOriginalName: {
         type: Sequelize.STRING(255),
         allowNull: true,
-        unique: true,
       },
       emissionDate: {
         type: Sequelize.STRING(255),
@@ -93,7 +90,17 @@ module.exports = {
       deliveryCtrc: {
         type: Sequelize.STRING(255),
         allowNull: true,
-      }
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        allowNull: true,
+        defaultValue: Sequelize.fn('now')
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: true,
+        defaultValue: Sequelize.fn('now')
+      },
     });
       
   },

@@ -42,7 +42,6 @@ module.exports = {
       paymentStatusProvider: {
         type: Sequelize.BOOLEAN,
         allowNull: true,
-        defaultValue: 0
       },
       orderId: {
         type: Sequelize.INTEGER,
