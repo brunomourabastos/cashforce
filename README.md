@@ -19,7 +19,6 @@ O banco de dados dessa aplicação está dockerizado, portanto, para executá-la
 Será necessário também que as portas 3001 (API) e 8080 (Front End) estejam disponíveis para a aplicação.
 <br>
 <hr> 
-<br>
 
  ## Orientações:
  <br>
