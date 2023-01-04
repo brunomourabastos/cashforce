@@ -30,7 +30,7 @@
             <td>{{ formatDate(order.emissionDate) }}</td>
             <td class="order-value"> {{ formatValue(order.value)  }}</td>
             <td class="order-status">{{ showStatus(order.orderStatusBuyer) }}</td>
-            <td> <button> Dados do cedente </button></td>
+            <td class="buyer-info"> <button> Dados do cedente </button></td>
           </tr>
         </tbody>
       </table>
@@ -157,6 +157,7 @@ export default defineComponent({
   flex-grow: 0;
 }
 .table-values {
+  text-align: center;
   box-sizing: border-box;
   outline: 1px solid #DFE2EB;
   border-radius: 6px;
@@ -164,8 +165,6 @@ export default defineComponent({
   height: 48px;
 }
 .table-values td {
-  align-items: center;
-  padding-left: 30px;
   box-sizing: border-box;
   width: 1177px;
   height: 48px;
@@ -187,6 +186,10 @@ export default defineComponent({
   line-height: 16px;
   color: #00AD8C;
   text-transform: uppercase;
+}
+.buyer-info {
+  text-align: end;
+  padding-right: 8px;
 }
 
 table {
