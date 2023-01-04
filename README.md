@@ -15,6 +15,10 @@ Será necessário também que as portas 3001 (API) e 8080 (Front End) estejam di
 <br>
 <hr> 
 <br>
+
+ ## Orientações:
+ <br>
+
 <details>
   <summary>
   <strong>🛠 Ferramentas:</strong>
@@ -262,6 +266,7 @@ Para ter acesso ao Front End da aplicação, siga as orientações e acesse o en
     <summary>Protótipo</summary>
     <img src='./images/imgPrototipo.png' />
   </details>
+  <br>
 
 <strong>A aplicação final deve estar igual a imagem abaixo:</strong>
   <details>
