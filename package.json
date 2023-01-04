@@ -1,0 +1,25 @@
+{
+  "name": "cashforce",
+  "version": "1.0.0",
+  "description": "Teste técnico cashforce",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "install:all": "cd frontend && npm install --force && cd .. && cd backend && npm install",
+    "start:docker": "cd backend && docker-compose up -d",
+    "start:db": "cd backend && npm run db:reset",
+    "start:api": "cd backend && npm start",
+    "start:app": "cd frontend && npm start",
+    "test:api": "cd backend && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunomourabastos/cashforce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brunomourabastos/cashforce/issues"
+  },
+  "homepage": "https://github.com/brunomourabastos/cashforce#readme"
+}
